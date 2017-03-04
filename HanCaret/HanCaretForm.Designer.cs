@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.m_label = new System.Windows.Forms.Label();
+            this.m_label = new JKCommon.OutlineLabel(); //new System.Windows.Forms.Label();
+            this.m_label.OutlineWidth = 1;
             this.m_timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label m_label;
+        private JKCommon.OutlineLabel m_label;
+        //private System.Windows.Forms.Label m_label;
         private System.Windows.Forms.Timer m_timer;
     }
 }
