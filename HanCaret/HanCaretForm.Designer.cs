@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.m_label = new JKCommon.OutlineLabel(); //new System.Windows.Forms.Label();
-            this.m_label.OutlineWidth = 1;
+            this.m_label = new JKCommon.OutlineLabel();
             this.m_timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -38,10 +37,12 @@
             // 
             this.m_label.BackColor = System.Drawing.Color.Transparent;
             this.m_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_label.Font = new System.Drawing.Font("Dotum", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.m_label.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.m_label.Location = new System.Drawing.Point(0, 0);
             this.m_label.Margin = new System.Windows.Forms.Padding(0);
             this.m_label.Name = "m_label";
+            this.m_label.OutlineColor = System.Drawing.Color.White;
+            this.m_label.OutlineWidth = 2F;
             this.m_label.Size = new System.Drawing.Size(25, 25);
             this.m_label.TabIndex = 0;
             // 
@@ -53,7 +54,7 @@
             this.Controls.Add(this.m_label);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HanCaretForm";

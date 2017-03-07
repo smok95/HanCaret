@@ -138,14 +138,13 @@ namespace HanCaret
             m_timer.Interval = 250;
             m_timer.Tick += M_timer_Tick;
             m_timer.Start();
-
-            this.BackColor = Color.LimeGreen;
-
+            
             this.Width = 0;
             this.Height = 0;
 
             this.BackColor = Color.DarkGray;
             this.TransparencyKey = Color.DarkGray;
+
         }
     }
 }

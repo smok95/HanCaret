@@ -43,12 +43,15 @@ namespace IME_Status
                 return false;
 
             uint IMC_GETOPENSTATUS = 5;
-            //uint IMC_GETCONVERSIONMODE = 1;
-            Win32.ImeConversionMode mode = (Win32.ImeConversionMode)Win32.SendMessage(hImeWnd, Win32.WindowMessage.ImeControl, (IntPtr)IMC_GETOPENSTATUS, IntPtr.Zero);
+            uint IMC_GETCONVERSIONMODE = 1;
+            IntPtr ret = Win32.SendMessage(hImeWnd, Win32.WindowMessage.ImeControl, (IntPtr)IMC_GETOPENSTATUS, IntPtr.Zero);
+            if(ret != IntPtr.Zero)
+            {
+                Win32.ImeConversionMode mode = (Win32.ImeConversionMode)Win32.SendMessage(hImeWnd, Win32.WindowMessage.ImeControl, (IntPtr)IMC_GETCONVERSIONMODE, IntPtr.Zero);
 
-            // 일본어, 중국어 등에 대한 처리는 안되어 있으니 주의.
-
-            isHangul = mode==Win32.ImeConversionMode.IME_CMODE_HANGUL;
+                // 일본어, 중국어 등에 대한 처리는 안되어 있으니 주의.
+                isHangul = mode == Win32.ImeConversionMode.IME_CMODE_HANGUL;
+            }
 
             return true;
         }
